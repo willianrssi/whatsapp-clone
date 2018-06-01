@@ -1,0 +1,3 @@
+export const CONTACTS_LIST_USER = 'contactList: CONTACTS_LIST_USER'
+export const CONTACTS_LIST_LOADING = 'contactList: CONTACTS_LIST_LOADING'
+export const CONTACTS_LIST_LOADING_END = 'contactList: CONTACTS_LIST_LOADING_END'
