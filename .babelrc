@@ -3,18 +3,21 @@
   "env": {
     "development": {
       "plugins": [
-        ["module-resolver", {
-          "alias": {
-            "components": "./src/components",
-            "reducers": "./src/reduxFlow/reducers",
-            "assets": "./assets",
-            "config": "./src/config",
-            "images": "./assets/images",
-            "services": "./src/services",
-            "navigators": "./src/navigators"
-            }
-        }]
-        ,"transform-react-jsx-source"]
+        "transform-react-jsx-source"
+      ]
     }
-  }
+  },
+  "plugins": [
+    ["module-resolver", {
+        "alias": {
+          "components": "./src/components",
+          "reducers": "./src/reduxFlow/reducers",
+          "assets": "./assets",
+          "config": "./src/config",
+          "images": "./assets/images",
+          "services": "./src/services",
+          "navigators": "./src/navigators"
+        }
+      }]
+  ]
 }

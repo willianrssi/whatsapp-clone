@@ -31,7 +31,8 @@ class Chat extends Component {
       }, styles.message]}>
 
         <Text style={[{
-          backgroundColor: message.tipo === 'send' ? '#dbf5b4' : '#FFF' },
+          backgroundColor: message.tipo === 'send' ? '#dbf5b4' : '#FFF'
+        },
         styles.messageTxt
         ]}>
           {message.message}
@@ -52,13 +53,20 @@ class Chat extends Component {
             renderItem={(({ item }) => this.renderMessage(item))}
 
             ListEmptyComponent={() => <View />}
+
+            ref={ref => { this.flatList = ref }}
+            onContentSizeChange={() => this.flatList.scrollToEnd({ animated: true })}
+            onLayout={() => this.flatList.scrollToEnd({ animated: true })}
+
           />
         </View>
         <View style={styles.containerInput}>
           <TextInput style={styles.input} placeholder='Digite aqui...' value={this.props.message} onChangeText={(text) => this.props.handleChangeMessage(text)} />
-          <TouchableOpacity style={styles.sendButton} onPress={() => this.props.handleSendMessage(this.props.message, this.name, this.email)} >
+
+          {!!this.props.message && <TouchableOpacity style={styles.sendButton} onPress={() => this.props.handleSendMessage(this.props.message, this.name, this.email)} >
             <Image style={styles.sendImage} source={sendImage} />
-          </TouchableOpacity>
+          </TouchableOpacity>}
+
         </View>
       </KeyboardAvoidingView>
     )

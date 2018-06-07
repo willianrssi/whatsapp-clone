@@ -11,11 +11,11 @@ import reducers from './src/reduxFlow'
 import NavigatorService from './src/services/navigator'
 
 // App navigator
-import { AppNavigator } from 'navigators/appNavigator'
+import { AppNavigator } from './src/navigators/appNavigator'
 
 // firebase imports
 import firebase from 'firebase'
-import { firebaseConfig } from 'config/firebase'
+import { firebaseConfig } from './src/config/firebase'
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
